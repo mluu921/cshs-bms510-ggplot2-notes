@@ -478,7 +478,7 @@ ggplot(df, aes(x = age, y = after_stat(density))) +
   theme_bw()
 ```
 
-> We can add colors by mapping the fill aesthetic with our variable infection
+> We can add colors by mapping the fill aesthetic with our variable infection. Of note, by default, adding a fill will produce a stacked histogram (e.g. the height of the bar is the total count of both infection no and infection yes stacked on top of each other)
 
 ```{r}
 ggplot(df, aes(x = age, fill = infection)) +
@@ -507,7 +507,7 @@ ggplot(df, aes(x = age, fill = infection)) +
   labs(x = "Age", y = "Density")
 ```
 
-> Using different panels or 'facets'
+> Since stacked histograms are not very useful, and we are interested in visualizing the distriubtion of both infection No and Yes separately, we can use different panels or 'facets'
 
 ```{r}
 ggplot(df, aes(x = age, fill = infection)) +
