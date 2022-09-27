@@ -469,10 +469,10 @@ ggplot(df, aes(x = age)) +
   theme_bw()
 ```
 
-> The histogram also has the ability to show the density on the y axis instead of counts. We can do this by specifying the mapping within the `aes()` function by using `y = ..density..`
+> The histogram also has the ability to show the density on the y axis instead of counts. We can do this by specifying the mapping within the `aes()` function by using `y = after_stat(density)`
 
 ```{r}
-ggplot(df, aes(x = age, y = ..density..)) +
+ggplot(df, aes(x = age, y = after_stat(density))) +
   geom_histogram(binwidth = 5) +
   scale_x_continuous(breaks = seq(0,100,5)) +
   theme_bw()
